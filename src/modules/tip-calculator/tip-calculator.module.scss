@@ -1,0 +1,195 @@
+@use "../../assets/variables" as var;
+
+.tip__calculator {
+  background: var.$white;
+  max-width: 900px;
+  width: 90%;
+  margin: 30px 0;
+  color: var.$dark__grayish__cyan;
+  padding: 32px;
+  display: grid;
+  align-items: stretch;
+  justify-items: stretch;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  gap: 30px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+  @media screen and (max-width: 580px) {
+    padding: 24px;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 0.6rem;
+    width: 95%;
+  }
+
+  .tip__form {
+    padding: 20px;
+
+    @media screen and (max-width: 580px) {
+      padding: 0;
+    }
+
+    .input {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 60px 1fr;
+      background: var.$light__grayish__cyan__100;
+      padding: 6px 18px;
+      border-radius: 6px;
+    }
+    input {
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      background: none;
+      text-align: right;
+      color: var.$very__dark__cyan;
+      width: 100%;
+      max-width: 300px;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"] {
+      appearance: textfield;
+      -moz-appearance: textfield;
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    label:nth-child(1) {
+      margin-top: 0px !important;
+    }
+    .select__tip {
+      padding-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+
+      .percentage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // position: absolute;
+        // inset: 0;
+        width: 100%;
+        // z-index: 5;
+        text-align: center;
+        color: var.$very__dark__cyan;
+        // background: red;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .result {
+    background: var.$very__dark__cyan;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    justify-content: space-between;
+
+    @media screen and (max-width: 580px) {
+      padding: 30px;
+    }
+    @media screen and (max-width: 420px) {
+      padding: 20px;
+    }
+
+    .row {
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var.$strong__cyan;
+
+        @media screen and (max-width: 580px) {
+          font-size: 1.5rem;
+        }
+        @media screen and (max-width: 420px) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    h5 {
+      color: var.$light__grayish__cyan;
+      font-size: 0.62rem;
+
+      @media screen and (max-width: 420px) {
+        font-size: 0.5rem;
+      }
+    }
+    h6 {
+      color: var.$dark__grayish__cyan__100;
+      font-size: 0.6rem;
+
+      @media screen and (max-width: 420px) {
+        font-size: 0.4rem;
+      }
+    }
+  }
+
+  .button {
+    padding: 8px 4px;
+    border-radius: 8px;
+    background: var.$very__dark__cyan;
+    color: var.$white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+
+    &:hover {
+      background: var.$strong__cyan;
+      color: var.$very__dark__cyan;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:last-child {
+      background: var.$light__grayish__cyan__100;
+      border: 2px solid transparent;
+
+      &:hover {
+        border: 2px solid var.$strong__cyan;
+      }
+    }
+  }
+  .reset__button {
+    border: none;
+    background: var.$strong__cyan !important;
+    color: var.$very__dark__cyan;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &.disabled {
+      background: #0d686d !important;
+      color: #035c60 !important;
+    }
+  }
+}

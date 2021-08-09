@@ -1,0 +1,43 @@
+@use "./variables" as var;
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  font-family: "Space Mono", monospace;
+  box-sizing: border-box;
+}
+html {
+  font-size: 24px;
+}
+
+.App {
+  background: var.$light__grayish__cyan;
+  width: 100%;
+  // min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.btn.active {
+  background: var.$strong__cyan;
+  color: var.$very__dark__cyan;
+  border: 2px solid var.$strong__cyan;
+}
+
+.btn.active:last-child {
+  border: 2px solid var.$strong__cyan;
+}
