@@ -49,15 +49,15 @@ const TipCalculator = () => {
     return (
         <div className={style.tip__calculator}>
             <form className={style.tip__form}>
-                <label htmlFor="">Bill</label>
+                <label htmlFor="bill">Bill</label>
                 <div className={style.input}>
                     <img src={dollarIcon} alt="" />
-                    <input type="number" autoFocus={true} placeholder="0" value={bill} onChange={e => setBill(e.target.value)} />
+                    <input id="bill" type="number" autoFocus={true} placeholder="0" value={bill} onChange={e => setBill(e.target.value)} />
                 </div>
 
 
-                <label className={style.select__tip__label} htmlFor="">Select Tip %</label>
-                <div className={style.select__tip}>
+                <label className={style.select__tip__label} htmlFor="select_tip">Select Tip %</label>
+                <div id="select_tip" className={style.select__tip}>
                     <div className={`${style.button} btn`} id="btn1" onClick={(e) => changeSelectedBtn(e, 5)}>
                         5%
                     </div>
@@ -78,10 +78,10 @@ const TipCalculator = () => {
 
                 </div>
 
-                <label htmlFor="">Number of People</label>
+                <label htmlFor="number_of_people">Number of People</label>
                 <div className={style.input}>
                     <img src={personIcon} alt="" />
-                    <input type="number" placeholder="0" value={numberOfPeople} onChange={e => setNumberOfPeople(e.target.value)} />
+                    <input id="number_of_people" type="number" placeholder="0" value={numberOfPeople} onChange={e => setNumberOfPeople(e.target.value)} />
                 </div>
             </form>
 
